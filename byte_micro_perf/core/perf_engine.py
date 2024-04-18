@@ -125,9 +125,9 @@ class PerfEngine:
         return backend(self.workload, self.args.vendor_path)
 
     def start_engine(self) -> None:
-        status = self.activate_venv(self.backend_type)
-        if not status:
-            log.warning("Activate virtualenv Failed, Please Check...")
+        # status = self.activate_venv(self.backend_type)
+        # if not status:
+        #     log.warning("Activate virtualenv Failed, Please Check...")
 
         self.backend = self.init_backend(self.backend_type)
         output_dir = os.path.abspath("reports/" + self.backend_type)
@@ -139,7 +139,7 @@ class PerfEngine:
         else:
             status = self.start_perf(self.workload)
 
-        self.deactivate_venv()
+        # self.deactivate_venv()
 
     def start_perf(self, workload: Dict[str, Any]) -> bool:
         log.info(
