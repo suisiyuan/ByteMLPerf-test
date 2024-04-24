@@ -223,7 +223,7 @@ class PerfEngine:
         command = [
             "torchrun",
             "--master_port", "19999",
-            "--nproc-per-node", str(tp_size),
+            "--nproc_per_node", str(tp_size),
             "llm_perf/server/launch_server.py",
             "--task", self.task,
             "--hardware_type", self.backend_type,
